@@ -1,0 +1,25 @@
+{
+    "name": "youniverse-center/request-validation-bundle",
+    "description": "Symfony Bundle for automatic validation of data provided in the request.",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Grzegorz Balcewicz",
+            "email": "grzegorz@balcewicz.pl"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "symfony/event-dispatcher": "^5.3",
+        "symfony/dependency-injection": "^5.3",
+        "symfony/validator": "^5.3",
+        "symfony/http-kernel": "^5.3",
+        "symfony/config": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yc\\RequestValidationBundle\\": ""
+        }
+    }
+}

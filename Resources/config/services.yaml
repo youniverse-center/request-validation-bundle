@@ -1,0 +1,6 @@
+services:
+  Yc\RequestValidationBundle\EventSubscriber\RequestValidationSubscriber:
+    arguments:
+      - !tagged_locator { tag: 'yc_request_validation.request_validator' }
+      - '@validator'
+    tags: [kernel.event_subscriber]
