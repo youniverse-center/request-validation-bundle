@@ -35,16 +35,13 @@ public function getData(Request $request): mixed
 
 for example:
 ```php
-public function transformData(mixed $data): Project
+public function transformData(mixed $data): array
 {
     $id = ProjectId::fromString($data['id']);
 
-    return new Project($id, $data['name']);
-}
-
-public function getRequestAttributeName(): string
-{
-    return 'project';
+    return [
+        'project' => new Project($id, $data['name'])
+    ];
 }
 ```
 

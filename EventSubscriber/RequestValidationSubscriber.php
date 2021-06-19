@@ -69,10 +69,10 @@ class RequestValidationSubscriber implements EventSubscriberInterface
         }
 
         if ($requestValidator instanceof DataTransformerInterface) {
-            $request->attributes->set(
-                $requestValidator->getRequestAttributeName(),
-                $requestValidator->transformData($data)
-            );
+            $transformedData = $requestValidator->transformData($data);
+            foreach ($transformedData as $key => $value) {
+                $request->attributes->set($key, $value);
+            }
         } else {
             $request->attributes->set('data', $data);
         }
