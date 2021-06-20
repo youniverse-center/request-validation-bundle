@@ -66,6 +66,8 @@ class RequestValidationSubscriber implements EventSubscriberInterface
             $event->setController(function () use ($requestValidator, $errors, $request) {
                 return $requestValidator->getInvalidRequestResponse($request, $errors);
             });
+
+            return;
         }
 
         if ($requestValidator instanceof DataTransformerInterface) {
